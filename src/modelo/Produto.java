@@ -3,18 +3,22 @@ package modelo;
 
 public abstract class Produto {
 
+	private int id;
 	private String nome;
 	private float peso;
 	private double valor;
 	protected static int quantidade;
 
-	public Produto(String nome, float peso, double valor) {
+	
+	
+	public Produto(int id, String nome, float peso, double valor) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.peso = peso;
 		this.valor = valor;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}

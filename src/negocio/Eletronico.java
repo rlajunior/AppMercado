@@ -3,17 +3,25 @@ package negocio;
 import modelo.Produto;
 
 public class Eletronico extends Produto {
-
+	
 	private String local;
 	private String locaRetirada;
 	private int anoGarantia;
 	boolean possuiGarantia;
 
-	public Eletronico(String nome, float peso, double valor) {
-		super(nome, peso, valor);
-		quantidade++;
+	
 
+	public Eletronico(int id, String nome, float peso, double valor, String local, String locaRetirada, int anoGarantia,
+		boolean possuiGarantia) {
+		super(id,nome, peso, valor);
+		this.local = local;
+		this.locaRetirada = locaRetirada;
+		this.anoGarantia = anoGarantia;
+		this.possuiGarantia = possuiGarantia;
+		quantidade++;
 	}
+
+
 
 	public void exibir() {
 		System.out.println(this.toString());

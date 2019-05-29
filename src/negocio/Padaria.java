@@ -8,11 +8,18 @@ public class Padaria extends Produto {
 	private String locaRetirada;
 	private String nomeAtendente;
 
-	public Padaria(String nome, float peso, double valor) {
-		super(nome, peso, valor);
+
+	public Padaria(int id, String nome, float peso, double valor, String localDepartamento, String locaRetirada,
+			String nomeAtendente) {
+		super(id, nome, peso, valor);
+		this.localDepartamento = localDepartamento;
+		this.locaRetirada = locaRetirada;
+		this.nomeAtendente = nomeAtendente;
 		quantidade++;
 
 	}
+
+	
 
 	@Override
 	public String toString() {
