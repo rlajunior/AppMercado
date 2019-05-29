@@ -16,7 +16,7 @@ public class Conexao {
 			String bancoDados = "mercado";      				
 			String url = "jdbc:mysql://" + serverName + "/" + bancoDados + "?useTimezone=true&serverTimezone=UTC";				
 			String usuario = "root";              				
-			String senha = "Rla110687";
+			String senha = "root";
 
 			try {
 				DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
