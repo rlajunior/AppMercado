@@ -1,6 +1,5 @@
-<%@page import="negocios.Documentario"%>
-<%@page import="negocios.Infantil"%>
-<%@page import="modelo.Video"%>
+<%@page import="negocio.Padaria"%>
+<%@page import="modelo.Produto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -17,7 +16,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form action="DocumentarioController" method="get">
+			  <form action="padariaController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -25,30 +24,26 @@
 			  </form>
 				
 				<%
-				List<Documentario> lista = (List<Documentario>)request.getAttribute("lista");
+				List<Padaria> lista = (List<Padaria>)request.getAttribute("lista");
 			 	%> 
 	
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>Nome</th>
-			        <th>Duração</th>
-			        <th>Pais</th>
-			        <th>Visualizações</th>
-			        <th>Investimento</th>
+			        <th>localDepartamento</th>
+			        <th>locaRetirada</th>
+			        <th>nomeAtendente</th>
 			        <th></th>
 			      </tr>
 			    </thead>
 			    <tbody>
-				<%for(Documentario item : lista){%>
-				<form action="DocumentarioController" method="post">
-					<input type="hidden" name="idConta" value="<%=item.getId()%>">
+				<%for(Padaria item : lista){%>
+				<form action="padariaController" method="post">
+					<input type="hidden" name="idConta"value"<%=item.getId() %>">
 			      <tr>
-			        <td><%=item.getNome()%></td>
-			        <td><%=item.getDuracao()%> minutos</td>
-			        <td><%=item.getPais()%> anos</td>
-			        <td><%=item.getVisualizacao()%></td>
-			        <td><%=item.getInvestimento()%></td>
+			        <td><%= item.getLocalDepartamento()%></td>
+			        <td><%= item.getLocaRetirada()%></td>
+			        <td><%= item.getNomeAtendente()%></td>
 			        <td>
 			        	<button type="submit" class="btn btn-danger btn-xs">
 			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

@@ -13,36 +13,31 @@
 <body>
 <div class="jumbotron">
 	<div class="container">
-	  <form action="DocumentarioController" method="get">
+	  <form action="EletronicoController" method="get">
 	    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 	
 		<hr>
 	  </form>
-	  <form action="DocumentarioController" method="POST">
+	  <form action="EletronicoController" method="POST">
 	
 	    <div class="form-group">
-	      <label for="nome">Nome:</label>
-	      <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" name="nome">
+	      <label for="local">local:</label>
+	      <input type="text" class="form-control" id="local" placeholder="Entre com o Locals" name="local">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="duracao">Duração:</label>
-	      <input type="text" class="form-control" id="duracao" placeholder="Entre com o duração" name="duracao">
+	      <label for="localRetirada">localretirada:</label>
+	      <input type="text" class="form-control" id="localRetirada" placeholder="Entre com local Retirada" name="localRetirada">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="faixaEtaria">Pais:</label>
-	      <input type="text" class="form-control" id="pais" placeholder="Entre com o pais" name="pais">
-	    </div>
-
-	    <div class="form-group">
-	      <label for="visualizacoes">Visualizações:</label>
-	      <input type="text" class="form-control" id="visualizacoes" placeholder="Entre com as visualizações" name="visualizacoes">
+	      <label for="anoGarantia">anogarantia:</label>
+	      <input type="text" class="form-control" id="anoGarantia" placeholder="Entre com que ano vai a garantia" name="anoGarantia">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="avaliacao">Investimento:</label>
-	      <input type="text" class="form-control" id="investimento" placeholder="Entre com o investimento" name="ivnestimento">
+	      <label for="possuiGarantia">possuigarantia:</label>
+	      <input type="text" class="form-control" id="possuiGarantia" placeholder="Possui Garantia" name="possuiGarantia">
 	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>

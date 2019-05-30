@@ -13,36 +13,31 @@
 <body>
 <div class="jumbotron">
 	<div class="container">
-	  <form action="DocumentarioController" method="get">
+	  <form action="SupervisorController" method="get">
 	    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 	
 		<hr>
 	  </form>
-	  <form action="DocumentarioController" method="POST">
+	  <form action="SupervisorController" method="POST">
 	
 	    <div class="form-group">
-	      <label for="nome">Nome:</label>
+	      <label for="nome">nome:</label>
 	      <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" name="nome">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="duracao">Duração:</label>
-	      <input type="text" class="form-control" id="duracao" placeholder="Entre com o duração" name="duracao">
+	      <label for="email">email:</label>
+	      <input type="text" class="form-control" id="email" placeholder="Entre com o email" name="email">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="faixaEtaria">Pais:</label>
-	      <input type="text" class="form-control" id="pais" placeholder="Entre com o pais" name="pais">
+	      <label for="anoEntrada">anoEntrada:</label>
+	      <input type="text" class="form-control" id="anoEntrada" placeholder="Entre com ano de entrada" name="anoEntrada">
 	    </div>
-
+	    
 	    <div class="form-group">
-	      <label for="visualizacoes">Visualizações:</label>
-	      <input type="text" class="form-control" id="visualizacoes" placeholder="Entre com as visualizações" name="visualizacoes">
-	    </div>
-	
-	    <div class="form-group">
-	      <label for="avaliacao">Investimento:</label>
-	      <input type="text" class="form-control" id="investimento" placeholder="Entre com o investimento" name="ivnestimento">
+	      <label for="ativo">ativo:</label>
+	      <input type="text" class="form-control" id="ativo" placeholder="Usuario esta Ativo" name="ativo">
 	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>

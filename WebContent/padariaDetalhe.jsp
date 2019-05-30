@@ -13,36 +13,26 @@
 <body>
 <div class="jumbotron">
 	<div class="container">
-	  <form action="DocumentarioController" method="get">
+	  <form action="PadariaController" method="get">
 	    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 	
 		<hr>
 	  </form>
-	  <form action="DocumentarioController" method="POST">
+	  <form action="PadariaController" method="POST">
 	
 	    <div class="form-group">
-	      <label for="nome">Nome:</label>
-	      <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" name="nome">
+	      <label for="nome">localDepartamento:</label>
+	      <input type="text" class="form-control" id="localDepartamento" placeholder="Entre local" name="localDepartamento">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="duracao">Duração:</label>
-	      <input type="text" class="form-control" id="duracao" placeholder="Entre com o duração" name="duracao">
+	      <label for="local">locaRetirada:</label>
+	      <input type="text" class="form-control" id="locaRetirada" placeholder="Entre com o Locals" name="locaRetirada">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="faixaEtaria">Pais:</label>
-	      <input type="text" class="form-control" id="pais" placeholder="Entre com o pais" name="pais">
-	    </div>
-
-	    <div class="form-group">
-	      <label for="visualizacoes">Visualizações:</label>
-	      <input type="text" class="form-control" id="visualizacoes" placeholder="Entre com as visualizações" name="visualizacoes">
-	    </div>
-	
-	    <div class="form-group">
-	      <label for="avaliacao">Investimento:</label>
-	      <input type="text" class="form-control" id="investimento" placeholder="Entre com o investimento" name="ivnestimento">
+	      <label for="nomeAtendente">nomeAtendente:</label>
+	      <input type="text" class="form-control" id="nomeAtendente" placeholder="Entre com nome do atendente" name="nomeAtendente">
 	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>

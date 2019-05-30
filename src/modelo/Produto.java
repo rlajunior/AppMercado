@@ -11,6 +11,8 @@ public abstract class Produto {
 
 	
 	
+
+
 	public Produto(int id, String nome, float peso, double valor) {
 		super();
 		this.id = id;
@@ -18,39 +20,85 @@ public abstract class Produto {
 		this.peso = peso;
 		this.valor = valor;
 	}
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
 
 	public String getNome() {
 		return nome;
 	}
 
+
+
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+
+
+
 
 	public float getPeso() {
 		return peso;
 	}
 
+
+
+
+
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
+
+
+
+
 
 	public double getValor() {
 		return valor;
 	}
 
+
+
+
+
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
 
-	public static int getquantidade() {
+
+
+
+
+	public static int getQuantidade() {
 		return quantidade;
 	}
 
-	public static void setquantidade(int quantidade) {
+
+
+
+
+	public static void setQuantidade(int quantidade) {
 		Produto.quantidade = quantidade;
 	}
-	
+
+
+
+
+
 	@Override
 	public String toString() {
 		return String.format("%d - %s - %.2f - %.2f", quantidade, this.nome, this.peso, this.valor);

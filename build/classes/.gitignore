@@ -1,7 +1,4 @@
-/auxiliar/
-/conexao/
-/controller/
-/dao/
 /modelo/
 /negocio/
 /teste/
+/controller/

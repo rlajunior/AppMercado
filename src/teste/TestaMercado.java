@@ -35,7 +35,7 @@ public class TestaMercado {
 			
 			System.out.println(
 					"Mostre-me a qtdd de instancias : " +
-					Produto.getquantidade()
+					Produto.getQuantidade()
 			);
 			
 			System.out.println(

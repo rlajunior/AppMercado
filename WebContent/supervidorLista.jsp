@@ -1,5 +1,4 @@
-<%@page import="negocio.Eletronico"%>
-<%@page import="modelo.Produto"%>
+<%@page import="negocio.Supervisor"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -16,7 +15,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form action="eletronicoController" method="get">
+			  <form action="supervisorControllerController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -24,28 +23,30 @@
 			  </form>
 				
 				<%
-				List<Eletronico> lista = (List<Eletronico>)request.getAttribute("lista");
+				List<Supervisor> lista = (List<Supervisor>)request.getAttribute("lista");
 			 	%> 
 	
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>local</th>
-			        <th>localRetirada</th>
-			        <th>anoGarantia</th>
-			        <th>possuiGarantia</th>
+			        <th>nome</th>
+			        <th>email</th>
+			        <th>anoEntrada</th>
+			        <th>ativo</th>
 			        <th></th>
 			      </tr>
 			    </thead>
 			    <tbody>
-				<%for(Eletronico item : lista){%>
-				<form action="eletronicoControlle" method="post">
+				<%for(Supervisor item : lista){%>
+				<form action="supervisorController" method="post">
 					<input type="hidden" name="idConta"value"<%=item.getId() %>">
 			      <tr>
-			        <td><%= item.getLocal()%></td>
-			        <td><%=item.getLocaRetirada()%> </td>
-			        <td><%=item.getAnoGarantia()%> </td>
-			        <td><%=item.getPossuiGarantia()%></td>
+			        <td><%= item.getNome()%></td>
+			        <td><%= item.getEmail()%></td>
+			       	<td><%= item.getAnoEntrada()%></td>
+			        <td><%= item.getAtivo()%></td>
+			        
+			        
 			        <td>
 			        	<button type="submit" class="btn btn-danger btn-xs">
 			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

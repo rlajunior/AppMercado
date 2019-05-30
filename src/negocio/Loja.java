@@ -97,7 +97,7 @@ public class Loja {
 
 	}
 	public boolean validar() {
-		return Produto.getquantidade() == this.produtosList.size();
+		return Produto.getQuantidade() == this.produtosList.size();
 	}
 	
 	

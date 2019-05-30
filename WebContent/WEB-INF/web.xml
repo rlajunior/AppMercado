@@ -44,14 +44,4 @@
     <servlet-name>MenuController</servlet-name>
     <url-pattern>/MenuController</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ProdutoController</display-name>
-    <servlet-name>ProdutoController</servlet-name>
-    <servlet-class>controller.ProdutoController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ProdutoController</servlet-name>
-    <url-pattern>/ProdutoController</url-pattern>
-  </servlet-mapping>
 </web-app>

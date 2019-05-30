@@ -16,14 +16,14 @@
 		<div class="jumbotron">
 			<div class="container">
 				<ul class="list-group">
-				  <li class="list-group-item">
-				  		<button type="submit" class="btn btn-default" name="tela" value="esporte">Padaria</button>
+				  <li class="list-group-item">	
+				  		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
 				  </li>
 				  <li class="list-group-item">
-				  		<button type="submit" class="btn btn-default" name="tela" value="documentario">Eletronico</button>
+				  		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
 				  </li>
 				  <li class="list-group-item">
-				  		<button type="submit" class="btn btn-default" name="tela" value="monetizacao">Produto</button>
+				  		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
 				  </li>
 				</ul>
 			</div>
