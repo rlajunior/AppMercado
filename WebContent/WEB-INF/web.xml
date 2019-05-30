@@ -6,6 +6,16 @@
   </welcome-file-list>
   <servlet>
     <description></description>
+    <display-name>MenuController</display-name>
+    <servlet-name>MenuController</servlet-name>
+    <servlet-class>controle.MenuController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuController</servlet-name>
+    <url-pattern>/MenuController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>EletronicoController</display-name>
     <servlet-name>EletronicoController</servlet-name>
     <servlet-class>controle.EletronicoController</servlet-class>
@@ -33,15 +43,5 @@
   <servlet-mapping>
     <servlet-name>SupervisorController</servlet-name>
     <url-pattern>/SupervisorController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>MenuController</display-name>
-    <servlet-name>MenuController</servlet-name>
-    <servlet-class>controle.MenuController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MenuController</servlet-name>
-    <url-pattern>/MenuController</url-pattern>
   </servlet-mapping>
 </web-app>
