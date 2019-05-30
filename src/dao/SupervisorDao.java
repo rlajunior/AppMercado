@@ -28,8 +28,8 @@ public class SupervisorDao {
 											rs.getInt("id"),
 											rs.getString("nome"),
 											rs.getString("email"),
-											rs.getInt("anoEntrada"),
-											rs.getBoolean("Ativo")
+											rs.getInt("anoentrada"),
+											rs.getBoolean("ativo")
 											)
 								);
 						}
@@ -46,9 +46,9 @@ public class SupervisorDao {
 						PreparedStatement ps = 
 								Conexao.obterConexao().prepareStatement(
 										"INSERT INTO supervisor "
-										+ "(nome, visualizacao, duracao, tipo, membros, arrecadacao) "
+										+ "(nome, email, anoentrada, ativo) "
 										+ "VALUES "
-										+ "(?,?,?,?,?,?)"
+										+ "(?,?,?,?)"
 									);
 
 						ps.setString(1,Supervisor.getNome());

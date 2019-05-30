@@ -12,8 +12,8 @@ public class Conexao {
 
 		if (conn == null){
 
-			String serverName = "localhost";			
-			String bancoDados = "mercado";      				
+			String serverName = "localhost:3306";			
+			String bancoDados = "dbmercado";      				
 			String url = "jdbc:mysql://" + serverName + "/" + bancoDados + "?useTimezone=true&serverTimezone=UTC";				
 			String usuario = "root";              				
 			String senha = "root";

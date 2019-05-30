@@ -12,22 +12,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <form action="MenuController" method="post">
 		<div class="jumbotron">
 			<div class="container">
 				<ul class="list-group">
 				  <li class="list-group-item">	
+				  		<form action="MenuController" method="post">
 				  		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
+				  		</form>
 				  </li>
 				  <li class="list-group-item">
+				  <form action="MenuController" method="post">
 				  		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
+				  </form>
 				  </li>
 				  <li class="list-group-item">
+				  <form action="MenuController" method="post">
 				  		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
 				  </li>
 				</ul>
 			</div>
 		</div>
-  </form>
 </body>
 </html>

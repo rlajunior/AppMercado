@@ -3,7 +3,7 @@ package modelo;
 
 public abstract class Produto {
 
-	private int id;
+	private Integer id;
 	private String nome;
 	private float peso;
 	private double valor;
@@ -13,7 +13,7 @@ public abstract class Produto {
 	
 
 
-	public Produto(int id, String nome, float peso, double valor) {
+	public Produto(Integer id, String nome, float peso, double valor) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,14 +22,22 @@ public abstract class Produto {
 	}
 	
 	
-	
-	public int getId() {
+
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+
+
+
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
+
 
 
 
@@ -43,9 +51,15 @@ public abstract class Produto {
 
 
 
+
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+
+
 
 
 
@@ -59,9 +73,15 @@ public abstract class Produto {
 
 
 
+
+
+
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
+
+
+
 
 
 
@@ -75,9 +95,15 @@ public abstract class Produto {
 
 
 
+
+
+
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+
+
+
 
 
 
@@ -91,9 +117,15 @@ public abstract class Produto {
 
 
 
+
+
+
 	public static void setQuantidade(int quantidade) {
 		Produto.quantidade = quantidade;
 	}
+
+
+
 
 
 

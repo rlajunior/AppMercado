@@ -20,19 +20,34 @@
 	  </form>
 	  <form action="PadariaController" method="POST">
 	
+		<div class="form-group">
+	      <label for="nome">nome:</label>
+	      <input type="text" class="form-control" id="nome" placeholder="Entre com Nome de Produto" name="nome">
+	    </div>
+	    
 	    <div class="form-group">
-	      <label for="nome">localDepartamento:</label>
-	      <input type="text" class="form-control" id="localDepartamento" placeholder="Entre local" name="localDepartamento">
+	      <label for="Peso">Peso:</label>
+	      <input type="text" class="form-control" id="Peso" placeholder="Entre com Peso do Produto" name="Peso">
+	    </div>
+	    
+	    <div class="form-group">
+	      <label for="valor">valor:</label>
+	      <input type="text" class="form-control" id="valor" placeholder="Entre com Valor do produto" name="valor">
+	    </div>
+	    
+	    <div class="form-group">
+	      <label for="localDepartamento">localDepartamento:</label>
+	      <input type="text" class="form-control" id="localDepartamento" placeholder="Entre local onde está Armazenado" name="localDepartamento">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="local">locaRetirada:</label>
-	      <input type="text" class="form-control" id="locaRetirada" placeholder="Entre com o Locals" name="locaRetirada">
+	      <label for="locaRetirada">locaRetirada:</label>
+	      <input type="text" class="form-control" id="locaRetirada" placeholder="Entre com o local da retirada" name="locaRetirada">
 	    </div>
 	
 	    <div class="form-group">
 	      <label for="nomeAtendente">nomeAtendente:</label>
-	      <input type="text" class="form-control" id="nomeAtendente" placeholder="Entre com nome do atendente" name="nomeAtendente">
+	      <input type="text" class="form-control" id="nomeAtendente" placeholder="Entre com nome do vendedor" name="nomeAtendente">
 	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>

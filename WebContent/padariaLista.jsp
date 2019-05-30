@@ -16,7 +16,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form action="padariaController" method="get">
+			  <form action="PadariaController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -30,6 +30,10 @@
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
+			        
+				 	<th>nome</th>
+		 			<th>peso</th>
+		 			<th>valor</th>
 			        <th>localDepartamento</th>
 			        <th>locaRetirada</th>
 			        <th>nomeAtendente</th>
@@ -39,8 +43,11 @@
 			    <tbody>
 				<%for(Padaria item : lista){%>
 				<form action="padariaController" method="post">
-					<input type="hidden" name="idConta"value"<%=item.getId() %>">
+					<input type="hidden" name="idconta"value"<%=item.getId()%>">
 			      <tr>
+			        <td><%= item.getNome()%></td>
+			        <td><%= item.getPeso()%></td>
+			        <td><%= item.getValor()%></td>
 			        <td><%= item.getLocalDepartamento()%></td>
 			        <td><%= item.getLocaRetirada()%></td>
 			        <td><%= item.getNomeAtendente()%></td>

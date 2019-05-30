@@ -17,7 +17,7 @@ public class PadariaDao {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
 		 
-		 String sql = "SELECT * FROM padaria ORDER BY id";
+		 String sql = "SELECT * FROM padaria pa inner join produto p on pa.id=p.id ORDER BY p.id";
 		 
 				 try {
 						PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PadariaDao {
 						PreparedStatement ps = 
 								Conexao.obterConexao().prepareStatement(
 										"INSERT INTO padaria "
-										+ "(nome, visualizacao, duracao, tipo, membros, arrecadacao) "
+										+ "(nome, peso, valor, localDepartmento, LocalRetirada, nomeAtendente) "
 										+ "VALUES "
 										+ "(?,?,?,?,?,?)"
 									);

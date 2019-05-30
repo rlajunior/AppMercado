@@ -16,7 +16,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form action="eletronicoController" method="get">
+			  <form action="EletronicoController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -30,6 +30,9 @@
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
+			        <th>nome</th>
+			        <th>peso</th>
+			        <th>valor</th>
 			        <th>local</th>
 			        <th>localRetirada</th>
 			        <th>anoGarantia</th>
@@ -42,10 +45,13 @@
 				<form action="eletronicoControlle" method="post">
 					<input type="hidden" name="idConta"value"<%=item.getId() %>">
 			      <tr>
+			        <td><%= item.getNome()%></td>
+			        <td><%= item.getPeso()%></td>
+			     	<td><%= item.getValor()%></td>
 			        <td><%= item.getLocal()%></td>
 			        <td><%=item.getLocaRetirada()%> </td>
 			        <td><%=item.getAnoGarantia()%> </td>
-			        <td><%=item.getPossuiGarantia()%></td>
+			        <td><%=item.getAnoGarantia()%></td>
 			        <td>
 			        	<button type="submit" class="btn btn-danger btn-xs">
 			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

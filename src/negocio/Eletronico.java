@@ -11,7 +11,7 @@ public class Eletronico extends Produto {
 
 	
 
-	public Eletronico(int id, String nome, float peso, double valor, String local, String locaRetirada, int anoGarantia,
+	public Eletronico(Integer id, String nome, float peso, double valor, String local, String locaRetirada, int anoGarantia,
 		boolean possuiGarantia) {
 		super(id,nome, peso, valor);
 		this.local = local;
@@ -30,41 +30,60 @@ public class Eletronico extends Produto {
 	@Override
 	public String toString() {
 		return String.format("%s - %s - %s - %d, %s", super.toString(), this.getLocal(), this.getNome(),
-				this.getAnoGarantia(), this.getPossuiGarantia()
+				this.getAnoGarantia(), 
+				this.possuiGarantia
 
 		);
 	}
+
+
 
 	public String getLocal() {
 		return local;
 	}
 
+
+
 	public void setLocal(String local) {
 		this.local = local;
 	}
+
+
 
 	public String getLocaRetirada() {
 		return locaRetirada;
 	}
 
+
+
 	public void setLocaRetirada(String locaRetirada) {
 		this.locaRetirada = locaRetirada;
 	}
+
+
 
 	public int getAnoGarantia() {
 		return anoGarantia;
 	}
 
+
+
 	public void setAnoGarantia(int anoGarantia) {
 		this.anoGarantia = anoGarantia;
 	}
 
-	public Boolean getPossuiGarantia() {
+
+
+	public boolean isPossuiGarantia() {
 		return possuiGarantia;
 	}
 
-	public void setPossuiGarantia(Boolean possuiGarantia) {
+
+
+	public void setPossuiGarantia(boolean possuiGarantia) {
 		this.possuiGarantia = possuiGarantia;
 	}
+
+
 
 }

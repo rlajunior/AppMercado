@@ -15,7 +15,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form action="supervisorControllerController" method="get">
+			  <form action="SupervisorController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
