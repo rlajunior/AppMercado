@@ -17,7 +17,7 @@ public class EletronicoDao {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
 		 
-		 String sql = "SELECT * FROM eletronico e inner join produto p on p.id=e.id ORDER BY e.id;";
+		 String sql = "SELECT * FROM eletronico e inner join produto p on e.idproduto=p.id ORDER BY e.id;";
 		 
 				 try {
 						PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -58,19 +58,16 @@ public class EletronicoDao {
 						PreparedStatement ps = 
 								Conexao.obterConexao().prepareStatement(
 										"INSERT INTO eletronico "
-										+ "(nome, peso, valor, local, localretirada, possuigarantia, idproduto ) "
+										+ "(local, localretirada, anogarantia, possuigarantia, idproduto ) "
 										+ "VALUES "
-										+ "(?,?,?,?,?,?)"
+										+ "(?,?,?,?,?)"
 									);
 
-						ps.setString(1,eletronico.getNome());
-						ps.setFloat(2, eletronico.getPeso());
-						ps.setDouble(3, eletronico.getValor());
-						ps.setString(4, eletronico.getLocal());
-						ps.setString(5, eletronico.getLocaRetirada());
-						ps.setInt(6, eletronico.getAnoGarantia());
-						ps.setInt(7, eletronico.getAnoGarantia());
-						ps.setInt(8, produtoSalvo.getId());
+						ps.setString(1, eletronico.getLocal());
+						ps.setString(2, eletronico.getLocaRetirada());
+						ps.setInt(3, eletronico.getAnoGarantia());
+						ps.setBoolean(4, eletronico.isPossuiGarantia());
+						ps.setInt(5, produtoSalvo.getId());
 						ps.execute();
 						
 						return true;

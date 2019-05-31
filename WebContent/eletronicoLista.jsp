@@ -30,13 +30,12 @@
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>nome</th>
-			        <th>peso</th>
-			        <th>valor</th>
-			        <th>local</th>
-			        <th>localRetirada</th>
-			        <th>anoGarantia</th>
-			        <th>possuiGarantia</th>
+			        <th>Nome do produto</th>
+			        <th>Peso do produto</th>
+			        <th>Valor do produto</th>
+			        <th>Local de Produto</th>
+			        <th>Local da Retirada</th>
+			        <th>Término Garantia</th>
 			        <th></th>
 			      </tr>
 			    </thead>
@@ -50,8 +49,7 @@
 			     	<td><%= item.getValor()%></td>
 			        <td><%= item.getLocal()%></td>
 			        <td><%=item.getLocaRetirada()%> </td>
-			        <td><%=item.getAnoGarantia()%> </td>
-			        <td><%=item.getAnoGarantia()%></td>
+			        <td><%=item.getAnoGarantia()%> </td>			     
 			        <td>
 			        	<button type="submit" class="btn btn-danger btn-xs">
 			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

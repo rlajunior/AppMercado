@@ -8,6 +8,7 @@ import java.util.List;
 
 import conexao.Conexao;
 import modelo.Produto;
+import negocio.Eletronico;
 import negocio.Padaria;
 
 
@@ -17,7 +18,7 @@ public class PadariaDao {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
 		 
-		 String sql = "SELECT * FROM padaria pa inner join produto p on pa.id=p.id ORDER BY p.id";
+		 String sql = "SELECT * FROM padaria pa inner join produto p on pa.idproduto=p.id ORDER BY p.id";
 		 
 				 try {
 						PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -31,9 +32,9 @@ public class PadariaDao {
 											rs.getString("nome"),
 											rs.getFloat("peso"),
 											rs.getDouble("valor"),
-											rs.getString("localDepartmento"),
-											rs.getString("LocalRetirada"),
-											rs.getString("nomeAtendente")
+											rs.getString("localdepartamento"),
+											rs.getString("Localretirada"),
+											rs.getString("nomeatendente")
 											)
 								);
 						}
@@ -44,33 +45,40 @@ public class PadariaDao {
 
 					return lista;
 				}
+	 
+	 			
 
-				public static boolean salvar(Padaria padaria) {
-					try {
-						PreparedStatement ps = 
-								Conexao.obterConexao().prepareStatement(
-										"INSERT INTO padaria "
-										+ "(nome, peso, valor, localDepartmento, LocalRetirada, nomeAtendente) "
+	 public static boolean salvar(Padaria padaria) {
+			try {
+
+				
+				ProdutoDao pdao = new ProdutoDao();
+				
+				Produto produtoSalvo = pdao.salvar(padaria);
+				
+				
+				PreparedStatement ps = 
+						Conexao.obterConexao().prepareStatement(
+								"INSERT INTO padaria "
+										+ "(localdepartamento, localretirada, nomeatendente, idproduto) "
 										+ "VALUES "
-										+ "(?,?,?,?,?,?)"
+										+ "(?,?,?,?)"
 									);
 
-						ps.setString(1,padaria.getNome ());
-						ps.setFloat(2, padaria.getPeso());
-						ps.setDouble(3, padaria.getValor());
-						ps.setString(4, padaria.getLocalDepartamento());
-						ps.setString(5, padaria.getLocaRetirada());
-						ps.setString(5, padaria.getNomeAtendente());
+						ps.setString(1, padaria.getLocalDepartamento());
+						ps.setString(2, padaria.getLocaRetirada());
+						ps.setString(3, padaria.getNomeAtendente());
+						ps.setInt(4, produtoSalvo.getId());
 						ps.execute();
-						
-						return true;
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-						
-					return false;
-					
-				}
+				
+				return true;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+				
+			return false;
+			
+		}
 
-	
-	}
+
+}

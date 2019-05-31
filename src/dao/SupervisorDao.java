@@ -11,6 +11,21 @@ import negocio.Supervisor;
 
 public class SupervisorDao {
 	
+	public Boolean remover(int id) {
+		
+		String sql = "DELETE FROM supervisor WHERE id = " + id;
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+	
 	 public static Object obterlista() {
 		 
 		 List<Supervisor> lista = new ArrayList<Supervisor>();
@@ -54,7 +69,7 @@ public class SupervisorDao {
 						ps.setString(1,Supervisor.getNome());
 						ps.setString(2, Supervisor.getEmail());
 						ps.setInt(3, Supervisor.getAnoEntrada());
-						ps.setBoolean(4, Supervisor.getAtivo());
+						ps.setBoolean(4, Supervisor.isAtivo());
 						ps.execute();
 						
 						return true;

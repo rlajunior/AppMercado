@@ -38,22 +38,14 @@
 			    </thead>
 			    <tbody>
 				<%for(Supervisor item : lista){%>
-				<form action="supervisorController" method="post">
-					<input type="hidden" name="idConta"value"<%=item.getId() %>">
 			      <tr>
 			        <td><%= item.getNome()%></td>
 			        <td><%= item.getEmail()%></td>
 			       	<td><%= item.getAnoEntrada()%></td>
-			        <td><%= item.getAtivo()%></td>
-			        
-			        
 			        <td>
-			        	<button type="submit" class="btn btn-danger btn-xs">
-			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			        	</button>
+		        		<a href="ExcluirSupervisorController?id=<%= item.getId() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			        </td>
 			      </tr>
-			    </form>
 				<%}%>	
 			    </tbody>
 			</table>

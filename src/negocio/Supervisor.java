@@ -2,15 +2,15 @@ package negocio;
 
 public class Supervisor {
 	
-	private int id;
+	private Integer id;
 	private String nome;
 	private String email;
-	private int anoEntrada;
+	private Integer anoEntrada;
 	private boolean ativo;
 
 	
 
-	public Supervisor(int id, String nome, String email, int anoEntrada, boolean ativo) {
+	public Supervisor(Integer id, String nome, String email, Integer anoEntrada, boolean ativo) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -32,11 +32,11 @@ public class Supervisor {
 		System.out.println(this.toString());
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -56,15 +56,15 @@ public class Supervisor {
 		this.email = email;
 	}
 
-	public int getAnoEntrada() {
+	public Integer getAnoEntrada() {
 		return anoEntrada;
 	}
 
-	public void setAnoEntrada(int anoEntrada) {
+	public void setAnoEntrada(Integer anoEntrada) {
 		this.anoEntrada = anoEntrada;
 	}
 
-	public boolean getAtivo() {
+	public boolean isAtivo() {
 		return ativo;
 	}
 
@@ -72,5 +72,5 @@ public class Supervisor {
 		this.ativo = ativo;
 	}
 
-	
+
 }

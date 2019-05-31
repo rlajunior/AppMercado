@@ -6,6 +6,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.EletronicoDao;
+import dao.PadariaDao;
+import negocio.Eletronico;
+import negocio.Padaria;
+import dao.ProdutoDao;
+
 public class PadariaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +31,23 @@ public class PadariaController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+			Padaria p = new Padaria(
+					 null, 
+					 request.getParameter("nome"), 
+					 Float.valueOf(request.getParameter("peso")), 
+					 Double.valueOf(request.getParameter("valor")), 
+					 request.getParameter("localDepartamento"), 
+					 request.getParameter("locaRetirada"), 
+					 request.getParameter("nomeAtendente"));
+			
+			PadariaDao pao = new PadariaDao();
+			pao.salvar(p);
+			
+			response.sendRedirect("MenuController?tela=padaria");
+		 
+	}
+
 
 	}
 
-}

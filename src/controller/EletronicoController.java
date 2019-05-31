@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.If;
+
 import dao.EletronicoDao;
 import dao.ProdutoDao;
 import negocio.Eletronico;
@@ -26,17 +28,33 @@ public class EletronicoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 Eletronico e = new Eletronico(
+	
+		
+		Boolean garantia =	null;
+	
+		if (request.getParameter("anoGarantia") !=null)  {
+			garantia = true;
+		}  else {
+			garantia = false;
+		}
+		
+		
+		
+			Eletronico e = new Eletronico(
 				 null, 
 				 request.getParameter("nome"), 
 				 Float.valueOf(request.getParameter("peso")), 
-						 Double.valueOf(request.getParameter("valor")), 
-						 request.getParameter("local"), 
-						 request.getParameter("locaRetirada"), 
-						 Integer.valueOf(request.getParameter("anoGarantia")), 
-						 Boolean.valueOf(request.getParameter("possuiGarantia")));
+				 Double.valueOf(request.getParameter("valor")), 
+				 request.getParameter("local"), 
+				 request.getParameter("localRetirada"), 
+				 Integer.valueOf(request.getParameter("anoGarantia")), 
+				 Boolean.valueOf(garantia));
+	
 		 EletronicoDao edao = new EletronicoDao();
 		 edao.salvar(e);
+		 
+		 response.sendRedirect("MenuController?tela=eletronico");
 	}
 
+	
 }

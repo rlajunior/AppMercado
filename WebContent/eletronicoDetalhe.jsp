@@ -21,33 +21,33 @@
 	  <form action="EletronicoController" method="POST">
 	  	
 	  	 <div class="form-group">
-	      <label for="nome">nome:</label>
+	      <label for="nome">Nome Produto:</label>
 	      <input type="text" class="form-control" autocomplete="off" id="nome" placeholder="Entre com Nome de Produto" name="nome">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="Peso">Peso:</label>
-	      <input type="text" class="form-control" autocomplete="off" id="Peso" placeholder="Entre com Peso do Produto" name="Peso">
+	      <label for="Peso">Peso Produto:</label>
+	      <input type="text" class="form-control" autocomplete="off" id="Peso" placeholder="Entre com Peso do Produto" name="peso">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="valor">valor:</label>
+	      <label for="valor">Valor do Produto :</label>
 	      <input type="text" class="form-control" autocomplete="off" id="valor" placeholder="Entre com Valor do produto" name="valor">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="local">local:</label>
+	      <label for="local">Localização do Produto:</label>
 	      <input type="text" class="form-control" autocomplete="off" id="local" placeholder="Entre local onde está Armazenado" name="local">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="locaRetirada">locaRetirada:</label>
-	      <input type="text" class="form-control" autocomplete="off" id="locaRetirada" placeholder="Entre com o local da retirada" name="locaRetirada">
+	      <label for="locaRetirada">Local de Retirada do Produto:</label>
+	      <input type="text" class="form-control" autocomplete="off" id="locaRetirada" placeholder="Entre com o local da retirada" name="localRetirada">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="anogarantia">anogarantia:</label>
-	      <input type="text" class="form-control" autocomplete="off" id="anogarantia" placeholder="Ano do término da Garantia" name="anogarantia">
+	      <label for="anogarantia">Ano de Garantia:</label>
+	      <input type="text" class="form-control" autocomplete="off" id="anogarantia" placeholder="Ano do término da Garantia" name="anoGarantia">
 	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>

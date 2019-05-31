@@ -34,11 +34,6 @@
 	      <label for="anoEntrada">anoEntrada:</label>
 	      <input type="text" class="form-control" id="anoEntrada" placeholder="Entre com ano de entrada" name="anoEntrada">
 	    </div>
-	    
-	    <div class="form-group">
-	      <label for="ativo">ativo:</label>
-	      <input type="text" class="form-control" id="ativo" placeholder="Usuario esta Ativo" name="ativo">
-	    </div>
 	
 	    <button type="submit" class="btn btn-success">Cadastrar</button>
 	  </form>

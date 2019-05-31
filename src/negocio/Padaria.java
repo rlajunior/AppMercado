@@ -9,7 +9,7 @@ public class Padaria extends Produto {
 	private String nomeAtendente;
 
 
-	public Padaria(int id, String nome, float peso, double valor, String localDepartamento, String locaRetirada,
+	public Padaria(Integer id, String nome, float peso, double valor, String localDepartamento, String locaRetirada,
 			String nomeAtendente) {
 		super(id, nome, peso, valor);
 		this.localDepartamento = localDepartamento;
@@ -18,9 +18,7 @@ public class Padaria extends Produto {
 		quantidade++;
 
 	}
-
 	
-
 	@Override
 	public String toString() {
 		return String.format("%s - %s - %s", super.toString(), this.getLocalDepartamento(), this.getLocaRetirada(),

@@ -54,4 +54,14 @@
     <servlet-name>EletronicoController</servlet-name>
     <url-pattern>/EletronicoController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirSupervisorController</display-name>
+    <servlet-name>ExcluirSupervisorController</servlet-name>
+    <servlet-class>controller.ExcluirSupervisorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirSupervisorController</servlet-name>
+    <url-pattern>/ExcluirSupervisorController</url-pattern>
+  </servlet-mapping>
 </web-app>

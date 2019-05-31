@@ -31,12 +31,12 @@
 			    <thead>
 			      <tr>
 			        
-				 	<th>nome</th>
-		 			<th>peso</th>
-		 			<th>valor</th>
-			        <th>localDepartamento</th>
-			        <th>locaRetirada</th>
-			        <th>nomeAtendente</th>
+				 	<th>Nome do produto</th>
+		 			<th>Peso do produto</th>
+		 			<th>Valor do produto</th>
+			        <th>Departamento</th>
+			        <th>Local de retirada do produto</th>
+			        <th>Nome Atendente</th>
 			        <th></th>
 			      </tr>
 			    </thead>

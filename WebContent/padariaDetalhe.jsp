@@ -21,32 +21,32 @@
 	  <form action="PadariaController" method="POST">
 	
 		<div class="form-group">
-	      <label for="nome">nome:</label>
+	      <label for="nome">Nome do produto:</label>
 	      <input type="text" class="form-control" id="nome" placeholder="Entre com Nome de Produto" name="nome">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="Peso">Peso:</label>
-	      <input type="text" class="form-control" id="Peso" placeholder="Entre com Peso do Produto" name="Peso">
+	      <label for="Peso">Peso do Produto:</label>
+	      <input type="text" class="form-control" id="Peso" placeholder="Entre com Peso do Produto" name="peso">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="valor">valor:</label>
+	      <label for="valor">Valor do produto:</label>
 	      <input type="text" class="form-control" id="valor" placeholder="Entre com Valor do produto" name="valor">
 	    </div>
 	    
 	    <div class="form-group">
-	      <label for="localDepartamento">localDepartamento:</label>
+	      <label for="localDepartamento">Departamento:</label>
 	      <input type="text" class="form-control" id="localDepartamento" placeholder="Entre local onde está Armazenado" name="localDepartamento">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="locaRetirada">locaRetirada:</label>
+	      <label for="locaRetirada">Local da retirada do produro:</label>
 	      <input type="text" class="form-control" id="locaRetirada" placeholder="Entre com o local da retirada" name="locaRetirada">
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="nomeAtendente">nomeAtendente:</label>
+	      <label for="nomeAtendente">Nome do Atendente:</label>
 	      <input type="text" class="form-control" id="nomeAtendente" placeholder="Entre com nome do vendedor" name="nomeAtendente">
 	    </div>
 	
