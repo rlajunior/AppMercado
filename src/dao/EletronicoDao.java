@@ -10,10 +10,28 @@ import conexao.Conexao;
 import modelo.Produto;
 import negocio.Eletronico;
 
-
 public class EletronicoDao {
 	
-	 public static Object obterlista() {
+	
+//		public boolean remove (int id) {
+//				
+//				String sql = "DELETE FROM eletronico WHERE id = " + id;
+//				String sql2 = "DELETE FROM produto WHERE id = " +  obterId() ;
+//		
+//		try {
+//			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+//			ps.executeUpdate(sql);
+//			PreparedStatement ps1 = Conexao.obterConexao().prepareStatement(sql2);
+//			ps.executeUpdate(sql2);
+//			return true;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//		
+//	}
+		
+		public static Object obterlista() {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
 		 

@@ -29,9 +29,9 @@
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>nome</th>
+			        <th>Nome do Supervisor</th>
 			        <th>email</th>
-			        <th>anoEntrada</th>
+			        <th>Ano de entrada na empresa</th>
 			        <th>ativo</th>
 			        <th></th>
 			      </tr>

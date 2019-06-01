@@ -14,6 +14,23 @@ import negocio.Padaria;
 
 public class PadariaDao {
 	
+//	
+//	public boolean remove (int id) {
+//		
+//		String sql = "DELETE FROM padaria WHERE idproduto = " + id;
+//			
+//		try {
+//			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+//			ps.executeUpdate(sql);
+//			return true;		
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//		
+//	}
+	
+	
 	 public static Object obterlista() {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();

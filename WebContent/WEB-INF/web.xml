@@ -64,4 +64,24 @@
     <servlet-name>ExcluirSupervisorController</servlet-name>
     <url-pattern>/ExcluirSupervisorController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirPadariaController</display-name>
+    <servlet-name>ExcluirPadariaController</servlet-name>
+    <servlet-class>controller.ExcluirPadariaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirPadariaController</servlet-name>
+    <url-pattern>/ExcluirPadariaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirEletronicoController</display-name>
+    <servlet-name>ExcluirEletronicoController</servlet-name>
+    <servlet-class>controller.ExcluirEletronicoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirEletronicoController</servlet-name>
+    <url-pattern>/ExcluirEletronicoController</url-pattern>
+  </servlet-mapping>
 </web-app>

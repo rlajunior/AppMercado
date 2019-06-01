@@ -42,7 +42,6 @@
 			    </thead>
 			    <tbody>
 				<%for(Padaria item : lista){%>
-				<form action="padariaController" method="post">
 					<input type="hidden" name="idconta"value"<%=item.getId()%>">
 			      <tr>
 			        <td><%= item.getNome()%></td>
@@ -52,13 +51,10 @@
 			        <td><%= item.getLocaRetirada()%></td>
 			        <td><%= item.getNomeAtendente()%></td>
 			        <td>
-			        	<button type="submit" class="btn btn-danger btn-xs">
-			        		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			        	</button>
+			       	 <a href="ExcluirPadariaController?id=<%= item.getId() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			        </td>
 			      </tr>
-			    </form>
-				<%}%>	
+			  	<%}%>	
 			    </tbody>
 			</table>
 		</div>

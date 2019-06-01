@@ -21,7 +21,7 @@
 	  <form action="SupervisorController" method="POST">
 	
 	    <div class="form-group">
-	      <label for="nome">nome:</label>
+	      <label for="nome">Nome do Supervisor:</label>
 	      <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" name="nome">
 	    </div>
 	
@@ -31,7 +31,7 @@
 	    </div>
 	
 	    <div class="form-group">
-	      <label for="anoEntrada">anoEntrada:</label>
+	      <label for="anoEntrada">Ano de entrada na empresa:</label>
 	      <input type="text" class="form-control" id="anoEntrada" placeholder="Entre com ano de entrada" name="anoEntrada">
 	    </div>
 	
