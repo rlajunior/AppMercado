@@ -9,19 +9,16 @@ public class Eletronico extends Produto {
 	private int anoGarantia;
 	boolean possuiGarantia;
 
-	
 
-	public Eletronico(Integer id, String nome, float peso, double valor, String local, String locaRetirada, int anoGarantia,
-		boolean possuiGarantia) {
-		super(id,nome, peso, valor);
+	public Eletronico(Integer idProduto, String nome, float peso, double valor, String local, String locaRetirada,
+			int anoGarantia, boolean possuiGarantia) {
+		super(idProduto, nome, peso, valor);
 		this.local = local;
 		this.locaRetirada = locaRetirada;
 		this.anoGarantia = anoGarantia;
 		this.possuiGarantia = possuiGarantia;
 		quantidade++;
 	}
-
-
 
 	public void exibir() {
 		System.out.println(this.toString());
@@ -36,49 +33,33 @@ public class Eletronico extends Produto {
 		);
 	}
 
-
-
 	public String getLocal() {
 		return local;
 	}
-
-
 
 	public void setLocal(String local) {
 		this.local = local;
 	}
 
-
-
 	public String getLocaRetirada() {
 		return locaRetirada;
 	}
-
-
 
 	public void setLocaRetirada(String locaRetirada) {
 		this.locaRetirada = locaRetirada;
 	}
 
-
-
 	public int getAnoGarantia() {
 		return anoGarantia;
 	}
-
-
 
 	public void setAnoGarantia(int anoGarantia) {
 		this.anoGarantia = anoGarantia;
 	}
 
-
-
 	public boolean isPossuiGarantia() {
 		return possuiGarantia;
 	}
-
-
 
 	public void setPossuiGarantia(boolean possuiGarantia) {
 		this.possuiGarantia = possuiGarantia;
@@ -86,4 +67,4 @@ public class Eletronico extends Produto {
 
 
 
-}
+	}

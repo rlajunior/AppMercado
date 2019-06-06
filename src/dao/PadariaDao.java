@@ -14,28 +14,12 @@ import negocio.Padaria;
 
 public class PadariaDao {
 	
-//	
-//	public boolean remove (int id) {
-//		
-//		String sql = "DELETE FROM padaria WHERE idproduto = " + id;
-//			
-//		try {
-//			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
-//			ps.executeUpdate(sql);
-//			return true;		
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return false;
-//		}
-//		
-//	}
-	
 	
 	 public static Object obterlista() {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
 		 
-		 String sql = "SELECT * FROM padaria pa inner join produto p on pa.idproduto=p.id ORDER BY p.id";
+		 String sql = "SELECT * FROM padaria pa inner join produto p on pa.idpadaria=p.idproduto ORDER BY p.idpadaria";
 		 
 				 try {
 						PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
@@ -45,7 +29,7 @@ public class PadariaDao {
 						while(rs.next()){
 							lista.add(
 									new Padaria(
-											rs.getInt("id"), 
+											rs.getInt("idproduto"), 
 											rs.getString("nome"),
 											rs.getFloat("peso"),
 											rs.getDouble("valor"),
@@ -77,15 +61,14 @@ public class PadariaDao {
 				PreparedStatement ps = 
 						Conexao.obterConexao().prepareStatement(
 								"INSERT INTO padaria "
-										+ "(localdepartamento, localretirada, nomeatendente, idproduto) "
+										+ "(localdepartamento, localretirada, nomeatendente) "
 										+ "VALUES "
-										+ "(?,?,?,?)"
+										+ "(?,?,?)"
 									);
 
 						ps.setString(1, padaria.getLocalDepartamento());
 						ps.setString(2, padaria.getLocaRetirada());
 						ps.setString(3, padaria.getNomeAtendente());
-						ps.setInt(4, produtoSalvo.getId());
 						ps.execute();
 				
 				return true;

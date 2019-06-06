@@ -41,7 +41,7 @@
 			    </thead>
 			    <tbody>
 				<%for(Eletronico item : lista){%>
-					<input type="hidden" name="idConta"value"<%=item.getId() %>">
+					<input type="hidden" name="idConta"value"<%=item.getIdProduto()%>">
 			      <tr>
 			        <td><%= item.getNome()%></td>
 			        <td><%= item.getPeso()%></td>
@@ -50,7 +50,7 @@
 			        <td><%=item.getLocaRetirada()%> </td>
 			        <td><%=item.getAnoGarantia()%> </td>			     
 			        <td>
-			        	<a href="ExcluirEletronicoController?id=<%= item.getId() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+			        	<a href="ExcluirEletronicoController?id=<%= item.getIdProduto() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			        </td>
 			      </tr>
 			    <%}%>	

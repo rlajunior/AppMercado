@@ -16,14 +16,12 @@ public class ProdutoDao {
 		try {
 
 			PreparedStatement ps = Conexao.obterConexao()
-					.prepareStatement("INSERT INTO produto " + "(nome, peso, valor ) " + "VALUES " + "(?,?,?)");
-
-			ps.setString(1, produto.getNome());
-			ps.setFloat(2, produto.getPeso());
-			ps.setDouble(3, produto.getValor());
-
+					.prepareStatement("INSERT INTO produto " + "(nome, peso, valor ) " + "VALUES " + "(?,?,?,?)");
+			ps.setInt(1, produto.getIdProduto());
+			ps.setString(2, produto.getNome());
+			ps.setFloat(3, produto.getPeso());
+			ps.setDouble(4, produto.getValor());
 			ps.execute();
-			produto.setId(obterUltimo());
 			return produto;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -33,29 +31,4 @@ public class ProdutoDao {
 
 	}
 
-	public  Integer obterUltimo() {
-
-		List<Produto> lista = new ArrayList<Produto>();
-
-		String sql = "SELECT max(id) as id FROM produto;";
-
-		try {
-			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
-
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				return rs.getInt("id");
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null ;
-
-	}
-
-
 }
-
-
-	
