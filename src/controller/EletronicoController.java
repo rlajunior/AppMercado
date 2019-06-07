@@ -55,6 +55,4 @@ public class EletronicoController extends HttpServlet {
 		 
 		 response.sendRedirect("MenuController?tela=eletronico");
 	}
-
-	
 }

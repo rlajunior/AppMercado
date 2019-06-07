@@ -20,6 +20,7 @@ public class Eletronico extends Produto {
 		quantidade++;
 	}
 
+
 	public void exibir() {
 		System.out.println(this.toString());
 	}

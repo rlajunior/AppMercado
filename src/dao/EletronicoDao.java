@@ -13,24 +13,23 @@ import negocio.Eletronico;
 public class EletronicoDao {
 	
 	
-//		public boolean remove (int id) {
-//				
-//				String sql = "DELETE FROM eletronico WHERE id = " + id;
-//				String sql2 = "DELETE FROM produto WHERE id = " +  obterId() ;
-//		
-//		try {
-//			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
-//			ps.executeUpdate(sql);
-//			PreparedStatement ps1 = Conexao.obterConexao().prepareStatement(sql2);
-//			ps.executeUpdate(sql2);
-//			return true;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return false;
-//		}
-//		
-//	}
+		public boolean remove (int id) {
+				
+				String sql = "DELETE FROM eletronico WHERE ideletronico = " + id;
+				String sql2 = "DELETE FROM produto WHERE idproduto = " +  id;
 		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.executeUpdate(sql);
+			PreparedStatement ps1 = Conexao.obterConexao().prepareStatement(sql2);
+			ps.executeUpdate(sql2);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}	
 		public static Object obterlista() {
 		 
 		 List<Produto> lista = new ArrayList<Produto>();
@@ -64,37 +63,37 @@ public class EletronicoDao {
 					return lista;
 				}
 
-				public static boolean salvar(Eletronico eletronico) {
-					try {
+		public static boolean salvar(Eletronico eletronico) {
+			try {
 
-						
-						ProdutoDao pdao = new ProdutoDao();
-						
-						Produto produtoSalvo = pdao.salvar(eletronico);
-						
-						
-						PreparedStatement ps = 
-								Conexao.obterConexao().prepareStatement(
-										"INSERT INTO eletronico "
-										+ "(ideletronico, local, localretirada, anogarantia, possuigarantia ) "
-										+ "VALUES "
-										+ "(?,?,?,?,?)"
-									);
-						
-						ps.setString(2, eletronico.getLocal());
-						ps.setString(3, eletronico.getLocaRetirada());
-						ps.setInt(4, eletronico.getAnoGarantia());
-						ps.setBoolean(5, eletronico.isPossuiGarantia());
-						ps.execute();
-						
-						return true;
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-						
-					return false;
-					
-				}
+				
+				ProdutoDao pdao = new ProdutoDao();
+				
+				Produto produtoSalvo = pdao.salvar(eletronico);
+				
+				
+				PreparedStatement ps = 
+						Conexao.obterConexao().prepareStatement(
+								"INSERT INTO eletronico "
+								+ "(ideletronico, local, localretirada, anogarantia, possuigarantia) "
+								+ "VALUES "
+								+ "(?,?,?,?,?)"
+							);
+				ps.setInt(1, produtoSalvo.getIdProduto());
+				ps.setString(2, eletronico.getLocal());
+				ps.setString(3, eletronico.getLocaRetirada());
+				ps.setInt(4, eletronico.getAnoGarantia());
+				ps.setBoolean(5, eletronico.isPossuiGarantia());
+				ps.execute();
+				
+				return true;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+				
+			return false;
+			
+		}
 
-	
-	}
+
+}

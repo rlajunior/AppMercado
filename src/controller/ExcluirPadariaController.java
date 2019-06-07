@@ -19,8 +19,8 @@ public class ExcluirPadariaController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		PadariaDao pao = new PadariaDao();
-//		pao.remove(Integer.parseInt(request.getParameter("id")));
+		PadariaDao pao = new PadariaDao();
+		pao.remove(Integer.parseInt(request.getParameter("id")));
 		response.sendRedirect("MenuController?tela=padaria");
 	}
 
