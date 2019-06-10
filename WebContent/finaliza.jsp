@@ -17,7 +17,7 @@
 	%>
 	
 <div class="container">
-  <form action="AppController" method="post">
+  <form action="MenuController" method="post">
 
 	<div class="container"> 
 	  <h2><%=titulo%></h2>

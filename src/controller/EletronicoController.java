@@ -38,8 +38,6 @@ public class EletronicoController extends HttpServlet {
 			garantia = false;
 		}
 		
-		
-		
 			Eletronico e = new Eletronico(
 				 null, 
 				 request.getParameter("nome"), 
@@ -53,6 +51,9 @@ public class EletronicoController extends HttpServlet {
 		 EletronicoDao edao = new EletronicoDao();
 		 edao.salvar(e);
 		 
-		 response.sendRedirect("MenuController?tela=eletronico");
+		 	request.setAttribute("titulo", "Eletronico");
+			request.setAttribute("mensagem", e.toString());
+			request.setAttribute("controller", "EletronicoController");
+			request.getRequestDispatcher("finaliza.jsp").forward(request, response);
 	}
 }

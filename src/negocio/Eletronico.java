@@ -33,6 +33,7 @@ public class Eletronico extends Produto {
 
 		);
 	}
+	
 
 	public String getLocal() {
 		return local;

@@ -43,7 +43,11 @@ public class SupervisorController extends HttpServlet {
 		SupervisorDao sao = new SupervisorDao();
 		sao.salvar(s);
 				
-		response.sendRedirect("MenuController?tela=supervisor");
+		request.setAttribute("titulo", "Supervisor");
+		request.setAttribute("mensagem", s.toString());
+		request.setAttribute("controller", "SupervisorController");
+		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
+	 
 	
 	}
 	

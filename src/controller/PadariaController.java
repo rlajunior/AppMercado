@@ -44,7 +44,10 @@ public class PadariaController extends HttpServlet {
 			PadariaDao pao = new PadariaDao();
 			pao.salvar(p);
 			
-			response.sendRedirect("MenuController?tela=padaria");
+			request.setAttribute("titulo", "Padaria");
+			request.setAttribute("mensagem", p.toString());
+			request.setAttribute("controller", "PadariaController");
+			request.getRequestDispatcher("finaliza.jsp").forward(request, response);
 		 
 	}
 
