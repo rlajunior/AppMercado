@@ -25,6 +25,17 @@
 	  <div class="btn-group btn-group-justified">
 	    <div class="btn-group">
 				  		<form action="MenuController" method="post">
+				  
+				  <li class="list-group-item">
+				  <form action="MenuController" method="post">
+				  		<button type="submit" class="btn btn-default" name="tela" value="loja">Loja</button>
+				  </li>
+				  
+				   <li class="list-group-item">
+				  <form action="MenuController" method="post">
+				  		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
+				  </li>
+				   
 				   <li class="list-group-item">		
 				  		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
 				 		</form>
@@ -34,10 +45,7 @@
 				  		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
 				  </form>
 				  </li>
-				  <li class="list-group-item">
-				  <form action="MenuController" method="post">
-				  		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
-				  </li>
+				   
 				</form>
 	    </div>
 	  </div>

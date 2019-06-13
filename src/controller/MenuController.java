@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.EletronicoDao;
+import dao.LojaDao;
 import dao.PadariaDao;
 import dao.SupervisorDao;
 
@@ -38,7 +39,10 @@ public class MenuController extends HttpServlet {
 		} else if (tela.equals("supervisor")) {
 			request.setAttribute("lista", SupervisorDao.obterlista());
 			request.getRequestDispatcher(tela+"Lista.jsp").forward(request, response);
-
+		
+		} else if (tela.equals("loja")) {
+			request.setAttribute("lista", LojaDao.obterlista());
+			request.getRequestDispatcher(tela+"Lista.jsp").forward(request, response);	
 		
 		}
 	}

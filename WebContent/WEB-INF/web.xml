@@ -94,4 +94,34 @@
     <servlet-name>AcessoController</servlet-name>
     <url-pattern>/AcessoController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirLojaController</display-name>
+    <servlet-name>ExcluirLojaController</servlet-name>
+    <servlet-class>controller.ExcluirLojaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirLojaController</servlet-name>
+    <url-pattern>/ExcluirLojaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LojaControlller</display-name>
+    <servlet-name>LojaControlller</servlet-name>
+    <servlet-class>controller.LojaControlller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LojaControlller</servlet-name>
+    <url-pattern>/LojaControlller</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LojaController</display-name>
+    <servlet-name>LojaController</servlet-name>
+    <servlet-class>controller.LojaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LojaController</servlet-name>
+    <url-pattern>/LojaController</url-pattern>
+  </servlet-mapping>
 </web-app>

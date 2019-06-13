@@ -8,29 +8,33 @@ import auxiliar.Constante;
 import modelo.Produto;
 
 public class Loja {
+	private Integer idLoja;
 	private String nome;
 	private String endereco;
 	private String bairro;
 	private List<Produto> produtosList = new ArrayList<Produto>();
-	private int[] qtdProdutos;
 	private Supervisor supervisor;
+	private int[] qtdProdutos;
 	
-	
-	
-	public Loja() {
+	public Loja(Integer idLoja, String nome, String endereco, String bairro, List<Produto> produtosList,
+			Supervisor supervisor, int[] qtdProdutos) {
 		super();
-	}
-
-
-	public Loja(String nome, String endereco, String bairro, List<Produto> produtosList) {
-		super();
+		this.idLoja = idLoja;
 		this.nome = nome;
 		this.endereco = endereco;
 		this.bairro = bairro;
 		this.produtosList = produtosList;
+		this.supervisor = supervisor;
+		this.qtdProdutos = qtdProdutos;
 	}
-
 	
+	public Loja(Integer idLoja, String nome, String endereco, String bairro) {
+		super();
+		this.idLoja = idLoja;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.bairro = bairro;
+	}
 
 	public Loja(String nome, String endereco, String bairro) {
 		super();
@@ -39,6 +43,14 @@ public class Loja {
 		this.bairro = bairro;
 	}
 
+	
+	public Integer getIdLoja() {
+		return idLoja;
+	}
+
+	public void setIdLoja(Integer idLoja) {
+		this.idLoja = idLoja;
+	}
 
 	public String getNome() {
 		return nome;
@@ -64,6 +76,14 @@ public class Loja {
 		this.bairro = bairro;
 	}
 
+	public List<Produto> getProdutosList() {
+		return produtosList;
+	}
+
+	public void setProdutosList(List<Produto> produtosList) {
+		this.produtosList = produtosList;
+	}
+
 	public Supervisor getSupervisor() {
 		return supervisor;
 	}
@@ -72,12 +92,12 @@ public class Loja {
 		this.supervisor = supervisor;
 	}
 
-	public List<Produto> getProdutosList() {
-		return produtosList;
+	public int[] getQtdProdutos() {
+		return qtdProdutos;
 	}
 
-	public void setProdutosList(List<Produto> produtosList) {
-		this.produtosList = produtosList;
+	public void setQtdProdutos(int[] qtdProdutos) {
+		this.qtdProdutos = qtdProdutos;
 	}
 
 	public void exibir() {

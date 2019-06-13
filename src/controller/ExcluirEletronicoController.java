@@ -22,7 +22,9 @@ public class ExcluirEletronicoController extends HttpServlet {
 		
 		EletronicoDao eao = new EletronicoDao();
 		eao.remove(Integer.parseInt(request.getParameter("id")));
-		response.sendRedirect("MenuController?tela=eletronico");
+		request.setAttribute("mensagem","Produto excluído com suceso");	
+		request.setAttribute("titulo", "Eletronico");
+		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
