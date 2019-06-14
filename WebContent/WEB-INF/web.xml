@@ -124,4 +124,24 @@
     <servlet-name>LojaController</servlet-name>
     <url-pattern>/LojaController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AssociaProduto</display-name>
+    <servlet-name>AssociaProduto</servlet-name>
+    <servlet-class>controller.AssociaProduto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AssociaProduto</servlet-name>
+    <url-pattern>/AssociaProduto</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AssociaProdutoController</display-name>
+    <servlet-name>AssociaProdutoController</servlet-name>
+    <servlet-class>controller.AssociaProdutoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AssociaProdutoController</servlet-name>
+    <url-pattern>/AssociaProdutoController</url-pattern>
+  </servlet-mapping>
 </web-app>

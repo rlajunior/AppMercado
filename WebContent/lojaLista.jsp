@@ -1,3 +1,4 @@
+<%@page import="modelo.Produto"%>
 <%@page import="negocio.Loja"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -15,7 +16,7 @@
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			  <form id="formZoado" action="LojaController">
+			  <form action="LojaController" method= get>
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -23,6 +24,8 @@
 			  </form>
 				
 				<%
+				Produto produto = (Produto)request.getAttribute("produto");
+				
 				List<Loja> lista = (List<Loja>)request.getAttribute("lista");
 			 	%> 
 	
@@ -31,8 +34,8 @@
 			      <tr>
 			        <th>Nome da Loja</th>
 			        <th>Endereço</th>
-			        <th>Supervisor</th>
 			        <th>Bairro</th>
+			         <th>Associa Produto</th>
 			        <th></th>
 			      </tr>
 			    </thead>
@@ -42,12 +45,12 @@
 			      <tr>
 			        <td><%= item.getNome()%></td>
 			        <td><%= item.getEndereco()%></td>
-			        <td>
-						<button onclick="Deletar()">Deletar</button>
-						<button onclick="Editar()">Editar</button>
+			     	<td><%= item.getBairro()%></td>	
+			     	<td>
+			     	<form action="AssociaProdutoController" method= post>
+					 <button type="submit" class="btn btn-default" name="op" value="editar">editar</butto>
 			        </td>
-			     	<td><%= item.getBairro()%></td>		     
-			        <td>
+			        </form>
 			        </td>
 			      </tr>
 			    <%}%>	
@@ -57,25 +60,4 @@
 	</div>
 </body>
 </html>
-
-<script type="text/javascript">
-
-function Deletar() {
-	
-	var objeto = document.getElementById('formZoado');
-	
-	objeto.attr('method', 'delete');
-	
-	
-}
-
-function Editar() {
-	
-	var objeto = document.getElementById('formZoado');
-
-	objeto.attr('method', 'get');
-	
-	
-}
-
 </script>

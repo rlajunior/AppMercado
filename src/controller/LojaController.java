@@ -23,6 +23,7 @@ public class LojaController extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("lojaDetalhe.jsp").forward(request, response);		
 		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,8 +42,8 @@ public class LojaController extends HttpServlet {
 		request.setAttribute("controller", "LojaController");
 		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
 	 
-	
+		}		
 	}
 		
-	}
+
 
