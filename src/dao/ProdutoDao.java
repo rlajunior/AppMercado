@@ -54,7 +54,53 @@ public class ProdutoDao {
 
 	}
 
+	public static List<Produto> obterProdutosNaoAssociadosALoja(Integer idLoja) {
 
+		List<Produto> lista = new ArrayList<Produto>();
+
+		String sql = "SELECT * FROM produto p WHERE p.idproduto not in (SELECT pl.idproduto FROM lojaproduto pl where pl.idloja = " + idLoja + ")";
+
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				
+				lista.add(new Produto(rs.getInt("idproduto"),rs.getString("nome") ,rs.getFloat("peso"),rs.getDouble("valor")) {
+				});
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return lista;
+	}
+
+	public static List<Produto> obterProdutosAssociadosALoja(int idLoja) {
+		List<Produto> lista = new ArrayList<Produto>();
+
+		String sql = "SELECT * FROM produto p WHERE p.idproduto  in (SELECT pl.idproduto FROM lojaproduto pl where pl.idloja = " + idLoja + ")";
+
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				
+				lista.add(new Produto(rs.getInt("idproduto"),rs.getString("nome") ,rs.getFloat("peso"),rs.getDouble("valor")) {
+				});
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return lista;
+	}
+	
 }
 
 

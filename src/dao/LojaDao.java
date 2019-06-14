@@ -57,6 +57,30 @@ public class LojaDao {
 
 	}
 
+	public static Loja buscarPorId(int parseInt) {
+
+		String sql = "SELECT * FROM loja WHERE idloja = " + parseInt;
+
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			
+			return new Loja(rs.getInt("idloja"),
+						rs.getString("nome"), 
+						rs.getString("endereco"), 
+						rs.getString("bairro"));
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
 }
 
 

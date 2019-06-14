@@ -47,10 +47,11 @@
 			        <td><%= item.getEndereco()%></td>
 			     	<td><%= item.getBairro()%></td>	
 			     	<td>
-			     	<form action="AssociaProdutoController" method= post>
-					 <button type="submit" class="btn btn-default" name="op" value="editar">editar</butto>
-			        </td>
-			        </form>
+			     	
+			     		<a class="btn btn-default" href="AssociaProdutoController?idLoja=<%=item.getIdLoja()%>">Associar Produtos</a>
+			     	
+			    
+			     
 			        </td>
 			      </tr>
 			    <%}%>	

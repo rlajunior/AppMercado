@@ -42,9 +42,9 @@ public class MenuController extends HttpServlet {
 		
 		} else if (tela.equals("loja")) {
 			request.setAttribute("lista", LojaDao.obterlista());
-			request.getRequestDispatcher(tela+"Lista.jsp").forward(request, response);	
+			request.getRequestDispatcher(tela+"Lista.jsp").forward(request, response);
 		
-		}
+		} 
 	}
 
 }
