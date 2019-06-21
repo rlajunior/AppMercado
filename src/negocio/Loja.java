@@ -13,21 +13,11 @@ public class Loja {
 	private String endereco;
 	private String bairro;
 	private List<Produto> produtosList = new ArrayList<Produto>();
+	private int qtdProdutos;
+	
 	private Supervisor supervisor;
-	private int[] qtdProdutos;
 	
-	public Loja(Integer idLoja, String nome, String endereco, String bairro, List<Produto> produtosList,
-			Supervisor supervisor, int[] qtdProdutos) {
-		super();
-		this.idLoja = idLoja;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.bairro = bairro;
-		this.produtosList = produtosList;
-		this.supervisor = supervisor;
-		this.qtdProdutos = qtdProdutos;
-	}
-	
+
 	public Loja(Integer idLoja, String nome, String endereco, String bairro) {
 		super();
 		this.idLoja = idLoja;
@@ -35,6 +25,17 @@ public class Loja {
 		this.endereco = endereco;
 		this.bairro = bairro;
 	}
+	
+	public Loja(Integer idLoja, String nome, String endereco, String bairro, Supervisor supervisor, Integer qtdProdutos) {
+		super();
+		this.idLoja = idLoja;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.bairro = bairro;
+		this.supervisor = supervisor;
+		this.qtdProdutos = qtdProdutos;
+	}
+
 
 	public Loja(String nome, String endereco, String bairro) {
 		super();
@@ -54,6 +55,17 @@ public class Loja {
 
 	public String getNome() {
 		return nome;
+	}
+
+	
+	
+	
+	public Supervisor getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(Supervisor supervisor) {
+		this.supervisor = supervisor;
 	}
 
 	public void setNome(String nome) {
@@ -84,27 +96,22 @@ public class Loja {
 		this.produtosList = produtosList;
 	}
 
-	public Supervisor getSupervisor() {
-		return supervisor;
-	}
 
-	public void setSupervisor(Supervisor supervisor) {
-		this.supervisor = supervisor;
-	}
-
-	public int[] getQtdProdutos() {
+	
+	
+	public int getQtdProdutos() {
 		return qtdProdutos;
 	}
 
-	public void setQtdProdutos(int[] qtdProdutos) {
+	public void setQtdProdutos(int qtdProdutos) {
 		this.qtdProdutos = qtdProdutos;
 	}
 
-	public void exibir() {
+	/*public void exibir() {
 
 		if (validar()) {
 			System.out.println(this.toString());
-			this.getSupervisor().exibir();
+			this.().exibir();
 		} else {
 			System.out.println("Invalido");
 		}
@@ -115,13 +122,13 @@ public class Loja {
 			showContabiliza();
 		}
 
-	}
+	}*/
 	public boolean validar() {
 		return Produto.getQuantidade() == this.produtosList.size();
 	}
 	
 	
-	private void contabilizar(Produto produto) {
+	/*private void contabilizar(Produto produto) {
 
 		qtdProdutos = new int[Constante.PRODUTOS.length];
 
@@ -141,13 +148,10 @@ public class Loja {
 			);
 		}
 
-	}
+	}*/
 
-	public void associa(Supervisor supervisor) {
-		setSupervisor(supervisor);
-	}
 
-	public void adiciona(Produto produto) {
+	/*public void adiciona(Produto produto) {
 		this.produtosList.add(produto);
 	}
 	
@@ -156,18 +160,18 @@ public class Loja {
 			produto.exibir();
 			contabilizar(produto);
 		}
-	}
-
+	}*/
 
 	@Override
 	public String toString() {
-		return "Mercado [nome=" + nome + ", endereco=" + endereco + ", bairro=" + bairro + ", produtosList="
-				+ produtosList + ", qtdProdutos=" + Arrays.toString(qtdProdutos) + ", supervisor=" + supervisor
-				+ ", getNome()=" + getNome() + ", getEndereco()=" + getEndereco() + ", getBairro()=" + getBairro()
-				+ ", getSupervisor()=" + getSupervisor() + ", getProdutosList()=" + getProdutosList() + ", validar()="
-				+ validar() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+		return "Loja [idLoja=" + idLoja + ", nome=" + nome + ", endereco=" + endereco + ", bairro=" + bairro
+				+ ", produtosList=" + produtosList + ", qtdProdutos=" + qtdProdutos + ", getIdLoja()="
+				+ getIdLoja() + ", getNome()=" + getNome() + ", getEndereco()=" + getEndereco() + ", getBairro()="
+				+ getBairro() + ", getProdutosList()=" + getProdutosList() + ", getQtdProdutos()="
+				+ getQtdProdutos() + ", validar()=" + validar() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+
 	
 	
 }

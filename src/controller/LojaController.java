@@ -43,16 +43,11 @@ public class LojaController extends HttpServlet {
 		
 		LojaDao lao = new LojaDao();
 		lao.salvar(l);
-		
-		LojaSupervisor lojas = new LojaSupervisor();
-		lojas.obterNome(Integer.parseInt(request.getParameter("idLoja")));
-		request.setAttribute("supervisor", lojas);
-		
 				
 		request.setAttribute("titulo", "Loja");
 		request.setAttribute("mensagem", l.toString());
 		request.setAttribute("controller", "LojaController");
-		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
+		response.sendRedirect("MenuController?tela=loja&mensagemSucesso=true");
 	 
 		}
 	

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import conexao.Conexao;
-import modelo.Produto;
 import negocio.Loja;
+import negocio.Supervisor;
 
 public class LojaDao {
 	
@@ -24,10 +24,15 @@ public class LojaDao {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
+				
+				Supervisor supervisor = buscaSupervisor(rs);
+				
+				Integer qtdProdutos = buscaQuantidadeProdutos(rs);
+				
 				lista.add(new Loja(rs.getInt("idloja"),
 						rs.getString("nome"), 
 						rs.getString("endereco"), 
-						rs.getString("bairro")));
+						rs.getString("bairro"),supervisor,qtdProdutos));
 			}
 
 		} catch (SQLException e) {
@@ -35,6 +40,41 @@ public class LojaDao {
 		}
 
 		return lista;
+	}
+
+	private static Integer buscaQuantidadeProdutos(ResultSet rs) throws SQLException {
+		String sql = "SELECT COUNT(*) as qtd FROM lojaproduto WHERE idloja = " + rs.getInt("idloja");
+		
+		PreparedStatement pss = Conexao.obterConexao().prepareStatement( sql);
+
+		ResultSet rss = pss.executeQuery();
+	
+		
+		if(rss.next()) {
+			
+			return rss.getInt("qtd");
+
+		}
+		return 0;
+	}
+
+	private static Supervisor buscaSupervisor(ResultSet rs) throws SQLException {
+		String sqlSupervisor = "SELECT * FROM supervisor WHERE idloja = " + rs.getInt("idloja");
+		
+		PreparedStatement pss = Conexao.obterConexao().prepareStatement(sqlSupervisor);
+
+		ResultSet rss = pss.executeQuery();
+		
+		Supervisor supervisor = null;
+		
+		if(rss.next()) {
+			
+			supervisor = new Supervisor();
+			supervisor.setNome(rss.getString("nome"));
+			supervisor.setIdSupervisor(rss.getInt("idsupervisor"));
+
+		}
+		return supervisor;
 	}
 
 	public static boolean salvar(Loja  loja) {

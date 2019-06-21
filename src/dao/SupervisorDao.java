@@ -25,6 +25,26 @@ public class SupervisorDao {
 		}
 
 	}
+	
+	public  Integer obterUltimo() {
+
+	
+		String sql = "SELECT max(idsupervisor) as idsupervisor FROM supervisor;";
+
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				return rs.getInt("idsupervisor");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null ;
+
+	}
 
 	public static Object obterlista() {
 
@@ -92,11 +112,34 @@ public class SupervisorDao {
 	}
 	
 	
-	public static Object obterSupervisorNaoAssociadosALoja() {
+	public static List<Supervisor> obterSupervisorNaoAssociadosALoja() {
 
 		List<Supervisor> lista = new ArrayList<Supervisor>();
 
 		String sql = " SELECT * FROM supervisor where idloja is NULL;";
+
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				lista.add(new Supervisor(rs.getInt("idsupervisor"), rs.getString("nome"), rs.getString("email"),
+						rs.getInt("anoentrada"), rs.getBoolean("ativo")));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return lista;
+	}
+	
+	public static Object obterNome(int idloja) {
+
+		List<Supervisor> lista = new ArrayList<Supervisor>();
+
+		String sql = "SELECT * FROM supervisor Where idloja = " + idloja +";";
 
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);

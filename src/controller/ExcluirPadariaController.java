@@ -23,7 +23,7 @@ public class ExcluirPadariaController extends HttpServlet {
 		pao.remove(Integer.parseInt(request.getParameter("id")));
 		request.setAttribute("mensagem","Produto Excluído com sucesso");	
 		request.setAttribute("titulo", "Padaria");
-		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
+		request.getRequestDispatcher("MenuController?tela=padaria").forward(request, response);
 	}
 
 	

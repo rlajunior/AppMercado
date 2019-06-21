@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.LojaSupervisor;
 import dao.SupervisorDao;
 import negocio.Supervisor;
 
@@ -42,11 +43,16 @@ public class SupervisorController extends HttpServlet {
 		
 		SupervisorDao sao = new SupervisorDao();
 		sao.salvar(s);
+		
+		if(request.getParameter("idLoja") != null && !request.getParameter("idLoja").equals("")) {
+			LojaSupervisor lao = new LojaSupervisor();
+			lao.salvar(sao.obterUltimo(),Integer.parseInt(request.getParameter("idLoja")));
+		}
 				
 		request.setAttribute("titulo", "Supervisor");
 		request.setAttribute("mensagem", s.toString());
 		request.setAttribute("controller", "SupervisorController");
-		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
+		response.sendRedirect("MenuController?tela=loja&msgSupervisorCadastrado=true");
 	 
 	
 	}

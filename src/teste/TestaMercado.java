@@ -28,9 +28,8 @@ public class TestaMercado {
 			Supervisor supervisor = new Supervisor(1, "Jose Mauricio Prado", "josem@mercadoonline.com.br",1990, true);
 			
 			Loja mercado = new Loja("Mercado Fácil", "Rua Conde de Bonfim,205","Tijuca");
-			mercado.associa(supervisor);
-			mercado.adiciona(padaria);
-			mercado.adiciona(eletronico);
+		/*	mercado.adiciona(padaria);
+			mercado.adiciona(eletronico);*/
 			
 			
 			System.out.println(
@@ -42,7 +41,7 @@ public class TestaMercado {
 					"Mostre-me a validação : " + mercado.validar()
 					
 			);
-			mercado.exibir();
+//			/mercado.exibir();
 						
 			
 		}

@@ -14,19 +14,36 @@
 <title>Listar</title>
 </head>
 <body>
-	<div class="jumbotron">
+<div style="background-color:#534b91;color:#fff;padding:10px;font-size:20px;" class="header">
+AppMercado
+</div>
+<div class="menu" style="border-bottom:1px solid #eee;padding:10px;background-color:#eee;">
+	<form action="MenuController" method="post">
+ 		<button type="submit" class="btn btn-default" name="tela" value="loja">Loja</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
+ 	</form>
+</div>
 		<div class="container">
-			  <form action="PadariaController" method="get">
+		
+			<h3 style="border-bottom:1px dashed #eee;margin-bottom:10px;">Listagem de Produtos (Padaria)</h3>
+
+		<div style="float:right;">
+			    	  <form action="PadariaController" method="get">
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
+			</form>
+		</div>
+		
+		
+		<br>
 			
-				<hr>
-			  </form>
-				
+
 				<%
 				List<Padaria> lista = (List<Padaria>)request.getAttribute("lista");
 			 	%> 
-	
+	<% if (lista != null && lista.size() >0){ %>
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -51,13 +68,16 @@
 			        <td><%= item.getLocaRetirada()%></td>
 			        <td><%= item.getNomeAtendente()%></td>
 			        <td>
-			       		<a href="ExcluirPadariaController?id=<%= item.getIdProduto() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+			       		<a href="ExcluirPadariaController?id=<%= item.getIdProduto() %>" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remover</a>
 			        </td>
 			      </tr>
 			  	<%}%>	
 			    </tbody>
 			</table>
+			<% }else { %>
+				<div class="alert alert-warning" style="margin-top:70px">Não existem produtos(padaria) cadastrados.</div>
+			<% } %>
 		</div>
-	</div>
+
 </body>
 </html>

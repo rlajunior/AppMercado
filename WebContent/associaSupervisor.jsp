@@ -41,8 +41,8 @@
 			        <th>Nome do Supervisor</th>
 			        <th>email</th>
 			        <th>Ano de entrada na empresa</th>
-			        <th>Associa Supervisor</th>
 			        <th></th>
+			        
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -52,10 +52,21 @@
 			        <td><%= item.getEmail()%></td>
 			       	<td><%= item.getAnoEntrada()%></td>
 			        <td>
+			        
+			        <form action = "AssociaSupervisorController" method = "post" >
+			       		 <button type="submit" class="btn btn-default" name="op" value="desassociar">Desassociar</button>
+			       		  <input type="hidden" name="idSupervisor" value="<%=item.getIdSupervisor()%>">
+			       		 <input type="hidden" name="idLoja" value="<%=idLoja%>"/>
+			       	</form>
+			        
+			        </td>
 			      <%}%>	
 			    </tbody>
 			</table>
 			</div>
+			
+			
+			<% if (listaAssociados == null || listaAssociados.size() == 0){ %>
 			<br><br><br>
 			
 			<div class="jumbotron" <% if (lista == null || lista.size() == 0){ out.println("style=\"display:none;\""); } %>>
@@ -80,7 +91,7 @@
 			        <td>
 			       	<form action = "AssociaSupervisorController" method = "post" >
 			       		 <button type="submit" class="btn btn-default" name="op" value="associar">Associar</button>
-			       		 <input type="hidden" name="idSupervisor" value="<%=item.getIdsupervisor()%>">
+			       		  <input type="hidden" name="idSupervisor" value="<%=item.getIdSupervisor()%>">
 			       		 <input type="hidden" name="idLoja" value="<%=idLoja%>"/>
 			       	</form>
 			        </td>
@@ -89,6 +100,8 @@
 			    </tbody>
 			</table>
 			
+			<a href="supervisorDetalhe.jsp?idLoja=<%=idLoja%>">Não encontrei o supervisor</a>
+			<% } %>
 		</div>
 	</div>
 </body>

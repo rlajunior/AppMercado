@@ -38,29 +38,30 @@ public class LojaSupervisor {
 		}
 		
 	}
-	
-	public static Object obterNome(int idloja) {
 
-		List<Supervisor> lista = new ArrayList<Supervisor>();
-
-		String sql = "SELECT * FROM supervisor Where idloja = " + idloja +";";
+	public void desassociar(String idSupervisor) {
+		
+		String sql = "UPDATE supervisor set idloja = null Where idsupervisor = " + idSupervisor +"; ";
 
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
-
-			ResultSet rs = ps.executeQuery();
-
-			while (rs.next()) {
-				lista.add(new Supervisor(rs.getInt("idsupervisor"), rs.getString("nome"), rs.getString("email"),
-						rs.getInt("anoentrada"), rs.getBoolean("ativo")));
-			}
-
-		} catch (SQLException e) {
+			ps.executeUpdate(sql);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		String sqld = "DELETE FROM supervisor WHERE idsupervisor = " + idSupervisor +"; ";
 
-		return lista;
+		try {
+			PreparedStatement psd = Conexao.obterConexao().prepareStatement(sqld);
+			psd.executeUpdate(sqld);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
+	
 }
 
 

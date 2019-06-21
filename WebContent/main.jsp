@@ -11,47 +11,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-<div class="panel-group">
-<div class="panel panel-default">
-<div class="panel-heading">
-  <h2>AppMercado: Sistema Cadastro de Produtos</h2>
-  <h4>Menu</h4>
-	<form action="login.jsp">
-	</form>
-   </div>
-   
-   	<div class="panel-body">
-	  <div class="btn-group btn-group-justified">
-	    <div class="btn-group">
-				  		<form action="MenuController" method="post">
-				  
-				  <li class="list-group-item">
-				  <form action="MenuController" method="post">
-				  		<button type="submit" class="btn btn-default" name="tela" value="loja">Loja</button>
-				  </li>
-				  
-				   <li class="list-group-item">
-				  <form action="MenuController" method="post">
-				  		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
-				  </li>
-				   
-				   <li class="list-group-item">		
-				  		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
-				 		</form>
-				 </li>		
-				  <li class="list-group-item">
-				  <form action="MenuController" method="post">
-				  		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
-				  </form>
-				  </li>
-				   
-				</form>
-	    </div>
-	  </div>
-	</div>
+
+
+<div style="background-color:#534b91;color:#fff;padding:10px;font-size:20px;" class="header">
+AppMercado
 </div>
-</div>
+<div class="menu" style="border-bottom:1px solid #eee;padding:10px;background-color:#eee;">
+	<form action="MenuController" method="post">
+ 		<button type="submit" class="btn btn-default" name="tela" value="loja">Loja</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="supervisor">Supervisor</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="eletronico">Eletronico</button>
+ 		<button type="submit" class="btn btn-default" name="tela" value="padaria">Padaria</button>
+ 	</form>
 </div>
 </body>
 </html>

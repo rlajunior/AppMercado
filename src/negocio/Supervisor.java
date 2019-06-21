@@ -7,10 +7,12 @@ public class Supervisor {
 	private String email;
 	private Integer anoEntrada;
 	private boolean ativo;
+	private Loja loja;
 
+	public Supervisor() {
+		// TODO Auto-generated constructor stub
+	}
 	
-
-
 	public Supervisor(Integer idsupervisor, String nome, String email, Integer anoEntrada, boolean ativo) {
 		super();
 		this.idSupervisor = idsupervisor;
@@ -34,16 +36,16 @@ public class Supervisor {
 
 	public void exibir() {
 		System.out.println(this.toString());
-	}	
-	
+	}
 
-	public Integer getIdsupervisor() {
+
+	public Integer getIdSupervisor() {
 		return idSupervisor;
 	}
 
 
-	public void setIdsupervisor(Integer idsupervisor) {
-		this.idSupervisor = idsupervisor;
+	public void setIdSupervisor(Integer idSupervisor) {
+		this.idSupervisor = idSupervisor;
 	}
 
 
@@ -86,8 +88,16 @@ public class Supervisor {
 		this.ativo = ativo;
 	}
 
-	
-	
+
+	public Loja getLoja() {
+		return loja;
+	}
+
+
+	public void setLoja(Loja loja) {
+		this.loja = loja;
+	}	
+		
 	
 }
 	

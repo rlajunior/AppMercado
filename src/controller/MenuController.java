@@ -11,6 +11,7 @@ import dao.EletronicoDao;
 import dao.LojaDao;
 import dao.PadariaDao;
 import dao.SupervisorDao;
+import negocio.Supervisor;
 
 public class MenuController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,6 +43,7 @@ public class MenuController extends HttpServlet {
 		
 		} else if (tela.equals("loja")) {
 			request.setAttribute("lista", LojaDao.obterlista());
+			request.setAttribute("supervisor", SupervisorDao.obterlista());
 			request.getRequestDispatcher(tela+"Lista.jsp").forward(request, response);
 		
 		} 
