@@ -1,5 +1,5 @@
-<%@page import="modelo.Produto"%>
 <%@page import="negocio.Loja"%>
+<%@page import="negocio.Supervisor"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -16,7 +16,7 @@
 <body>
 	
 		<div class="container">
-			  <form action="AssociaProdutoController" method="get">
+			  <form action="AssociaSupervisorController" method="get">
 			  
 			  	<h2>${loja.nome}</h2>
 			  
@@ -26,61 +26,61 @@
 			  </form>
 				
 				<%
-				List<Produto> lista = (List<Produto>)request.getAttribute("lista");	
-				List<Produto> listaAssociados = (List<Produto>)request.getAttribute("listaAssociados");	
+				List<Supervisor> listaAssociados = (List<Supervisor>)request.getAttribute("listaAssociados");	
+				List<Supervisor> lista = (List<Supervisor>)request.getAttribute("lista");	
 			 	%> 
 	
 			<% String idLoja = (String)request.getAttribute("idLoja"); %>
 			<div class="jumbotron" <% if (listaAssociados == null || listaAssociados.size() == 0){ out.println("style=\"display:none;\""); } %>>
-			<h3>Produtos associados</h3>
+			<h3>Supervisores associados</h3>
 			
 			
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>Nome do produto</th>
-			        <th>Peso do produto</th>
-			        <th>Valor do produto</th>
-			       <!--  <th></th> -->
+			        <th>Nome do Supervisor</th>
+			        <th>email</th>
+			        <th>Ano de entrada na empresa</th>
+			        <th>Associa Supervisor</th>
+			        <th></th>
 			      </tr>
 			    </thead>
 			    <tbody>
-				<%for(Produto item : listaAssociados){%>
-				
+				<%for(Supervisor item : listaAssociados){%>
 			      <tr>
 			        <td><%= item.getNome()%></td>
-			        <td><%= item.getPeso()%></td>
-			     	<td><%= item.getValor()%></td>		     
-			      </tr>
-			    <%}%>	
+			        <td><%= item.getEmail()%></td>
+			       	<td><%= item.getAnoEntrada()%></td>
+			        <td>
+			      <%}%>	
 			    </tbody>
 			</table>
 			</div>
 			<br><br><br>
 			
 			<div class="jumbotron" <% if (lista == null || lista.size() == 0){ out.println("style=\"display:none;\""); } %>>
-			<h3>Produtos para serem associados</h3>
+			<h3>Supervisor não associados</h3>
 			
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>Nome do produto</th>
-			        <th>Peso do produto</th>
-			        <th>Valor do produto</th>
+			        <th>Nome do Supervisor</th>
+			        <th>email</th>
+			        <th>Ano de entrada na empresa</th>
+			        <th>Associa Supervisor</th>
 			        <th></th>
 			      </tr>
 			    </thead>
 			    <tbody>
-				<%for(Produto item : lista){%>
-				
+				<%for(Supervisor item : lista){%>
 			      <tr>
 			        <td><%= item.getNome()%></td>
-			        <td><%= item.getPeso()%></td>
-			     	<td><%= item.getValor()%></td>		     
-			       <td>			
-			       	<form action = "AssociaProdutoController" method = "post" >
+			        <td><%= item.getEmail()%></td>
+			       	<td><%= item.getAnoEntrada()%></td>
+			        <td>
+			       	<form action = "AssociaSupervisorController" method = "post" >
 			       		 <button type="submit" class="btn btn-default" name="op" value="associar">Associar</button>
-			       		 <input type="hidden" name="idProduto" value="<%=item.getIdProduto()%>">
+			       		 <input type="hidden" name="idSupervisor" value="<%=item.getIdsupervisor()%>">
 			       		 <input type="hidden" name="idLoja" value="<%=idLoja%>"/>
 			       	</form>
 			        </td>

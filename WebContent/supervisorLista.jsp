@@ -43,7 +43,7 @@
 			        <td><%= item.getEmail()%></td>
 			       	<td><%= item.getAnoEntrada()%></td>
 			        <td>
-		        		<a href="ExcluirSupervisorController?id=<%= item.getId() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+		        		<a href="ExcluirSupervisorController?id=<%= item.getIdsupervisor() %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 			        </td>
 			      </tr>
 				<%}%>	

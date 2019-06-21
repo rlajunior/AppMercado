@@ -144,4 +144,14 @@
     <servlet-name>AssociaProdutoController</servlet-name>
     <url-pattern>/AssociaProdutoController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AssociaSupervisorController</display-name>
+    <servlet-name>AssociaSupervisorController</servlet-name>
+    <servlet-class>controller.AssociaSupervisorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AssociaSupervisorController</servlet-name>
+    <url-pattern>/AssociaSupervisorController</url-pattern>
+  </servlet-mapping>
 </web-app>

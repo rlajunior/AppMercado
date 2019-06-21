@@ -1,5 +1,6 @@
 <%@page import="modelo.Produto"%>
 <%@page import="negocio.Loja"%>
+<%@page import="negocio.Supervisor"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -17,6 +18,8 @@
 	<div class="jumbotron">
 		<div class="container">
 			  <form action="LojaController" method= get>
+			  
+			  
 			    <button type="submit" class="btn btn-default">Cadastrar</button>
 			    <button type="submit" class="btn btn-default" name="op" value="back">Voltar</button>
 			
@@ -27,6 +30,8 @@
 				Produto produto = (Produto)request.getAttribute("produto");
 				
 				List<Loja> lista = (List<Loja>)request.getAttribute("lista");
+				
+				Supervisor supervisor = (Supervisor)request.getAttribute("supervisor");
 			 	%> 
 	
 			<table class="table table-striped">
@@ -36,6 +41,8 @@
 			        <th>Endereço</th>
 			        <th>Bairro</th>
 			         <th>Associa Produto</th>
+			         <th>Nome do Supervisor</th>
+			         <th>Associa Supervisor</th>
 			        <th></th>
 			      </tr>
 			    </thead>
@@ -47,10 +54,15 @@
 			        <td><%= item.getEndereco()%></td>
 			     	<td><%= item.getBairro()%></td>	
 			     	<td>
-			     	
 			     		<a class="btn btn-default" href="AssociaProdutoController?idLoja=<%=item.getIdLoja()%>">Associar Produtos</a>
+			     
+			        </td>
+			        
+			        <td>"teste"</td> 
+			      
+			        <td>
 			     	
-			    
+			     		<a class="btn btn-default" href="AssociaSupervisorController?idLoja=<%=item.getIdLoja()%>">Associar Supervisor</a>
 			     
 			        </td>
 			      </tr>

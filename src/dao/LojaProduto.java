@@ -25,8 +25,8 @@ public class LojaProduto {
 
 	}
 
-	public void salvar(int idPRoduto, int idLoja) {
-		String sql = "INSERT INTO lojaproduto (idproduto,idloja) VALUES (" + idPRoduto + "," + idLoja + ");";
+	public void salvar(int idProduto, int idLoja) {
+		String sql = "INSERT INTO lojaproduto (idproduto,idloja) VALUES (" + idProduto + "," + idLoja + ");";
 
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
