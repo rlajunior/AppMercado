@@ -16,12 +16,15 @@ public class EletronicoDao {
 
 		String sql = "DELETE FROM eletronico WHERE ideletronico = " + id;
 		String sql2 = "DELETE FROM produto WHERE idproduto = " + id;
+		String sql3 = "DELETE FROM lojaproduto WHERE idproduto = " + id;
 
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
 			ps.executeUpdate(sql);
 			PreparedStatement ps1 = Conexao.obterConexao().prepareStatement(sql2);
 			ps.executeUpdate(sql2);
+			PreparedStatement ps2 = Conexao.obterConexao().prepareStatement(sql3);
+			ps.executeUpdate(sql3);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

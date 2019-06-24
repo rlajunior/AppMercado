@@ -17,11 +17,14 @@ public class PadariaDao {
 
 		String sql = "DELETE FROM padaria WHERE idpadaria = " + id;
 		String sql2 = "DELETE FROM produto WHERE idproduto = " + id;
+		String sql3 = "DELETE FROM lojaproduto WHERE idproduto = " + id;
 
 		try {
 			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
 			ps.executeUpdate(sql);
 			PreparedStatement ps1 = Conexao.obterConexao().prepareStatement(sql2);
+			PreparedStatement ps2 = Conexao.obterConexao().prepareStatement(sql3);
+			ps.executeUpdate(sql3);
 			ps.executeUpdate(sql2);
 			return true;
 		} catch (Exception e) {
